@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wetterfrosch</title>
+    <script src="script.js"></script>
 </head>
 <header>
     <h1 id="start">Wetterfrosch</h1>
@@ -25,12 +26,43 @@
             <form>
                 <input id="stadt" required placeholder="Duesseldorf" type="text" name="suche"/>
                 <input id="land" required placeholder="Deutschland" type="text" name="suche">
-                <button value="suche" name="suche">Senden</button>
+                <button onclick="getWeatherData()" type="button" name="suche">Senden</button>
             </form>
+            <p id="success">Die Suchmaschine steht bereit!</p>
         </div>
         <hr>
         <div id="data">
-
+            <section class="today">
+                <h2>Das Wetter heute:</h2>
+                <h3>Temperatur:</h3>
+                <p id="temp"></p>
+                <img src="" alt="Bild hängt von Wettervorhersage ab">
+                <div>
+                    
+                    <h4>Niederschlag: </h4>
+                    <p id="niederschlag"></p>
+                </div>
+                <div>
+                    <h4>Windgeschwindigkeit: </h4>
+                    <p id="wind"></p>
+                </div>
+                <div>
+                    <h4>Luftfeuchtigkeit: </h4>
+                    <p id="luft"></p>
+                </div>
+            </section>
+            <section class="week">
+                <h2>Das Wetter im Verlauf der nächsten Woche:</h2>
+                <ul>
+                    <li id="one"></li>
+                    <li id="two"></li>
+                    <li id="three"></li>
+                    <li id="four"></li>
+                    <li id="five"></li>
+                    <li id="six"></li>
+                    <li id="seven"></li>
+                </ul>
+            </section>
         </div>
     </main>
 </body>
