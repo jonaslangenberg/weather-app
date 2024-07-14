@@ -1,0 +1,67 @@
+/*General*/
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+/* Header */
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: aquamarine;
+    padding: 20px;
+    
+}
+
+#frog {
+    max-width: 200px;
+    height: auto;
+    width: 100%;
+}
+nav{
+    display: flex;
+    padding: 0;
+    
+}
+
+nav > ul{
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ list-style: none;
+ padding: 0;
+}
+nav > ul > li {
+    margin: 10px;
+    justify-content: flex-end;
+    padding: 10px;
+    
+}
+nav > ul > li > a{
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: 800;
+    
+}
+nav > ul > li > a:hover{
+    background-color: black;
+    color: aquamarine;
+    border: 2px solid white;
+}
+.head{
+    text-align: center;
+    max-width: 500px;
+    height: auto;
+    width: 100%;
+}
+
