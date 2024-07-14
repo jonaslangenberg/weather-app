@@ -28,14 +28,14 @@
         <div class="box">
             <div id="search">
                 <h2 class="search-h2">Suche nach einem beliebigen Ort:</h2>
-                <form>
+                <form id="first-form">
                     <div class="searchbox">  
                         <label for="stadt">Stadt: <input id="stadt" required placeholder="Duesseldorf" type="text" name="suche"/></label>
                     </div>
                     <div class="searchbox">
                         <label for="land">Land: <input id="land" required placeholder="Deutschland" type="text" name="suche"></label>
                     </div>
-                    <button onclick="getWeatherData()" type="button" name="suche">Senden</button>
+                    <button id="search-button" onclick="getWeatherData()" type="button" name="suche">Senden</button>
                 </form>
                 <p id="success">Die Suchmaschine steht bereit!</p>
             </div>
@@ -60,56 +60,64 @@
                     <p id="luft"></p>
                 </div>
             </section>
+            
             <section class="week">
                 <h2>Das Wetter im Verlauf der nächsten Woche:</h2>
                 <ul>
                     <li>
                         <div>
                            <p id="1date">Datum: </p> 
-                           <p id="1temp">Temperatur</p>
-                           <p id="1pre">Niederschlag</p>
+                           <p id="1temp">Temperatur:</p>
+                           <p id="1pre">Niederschlag:</p>
+                           <img class="small-image" id="img1" src="./pictures/frog.png" alt="The weather">
                         </div>
                     </li>
                     <li>
                         <div>
                            <p id="2date">Datum: </p> 
-                           <p id="2temp">Temperatur</p>
-                           <p id="2pre">Niederschlag</p>
+                           <p id="2temp">Temperatur:</p>
+                           <p id="2pre">Niederschlag:</p>
+                           <img class="small-image" id="img2" src="./pictures/frog.png" alt="The weather">
                         </div>
                     </li>
                     <li>
                         <div>
                            <p id="3date">Datum: </p> 
-                           <p id="3temp">Temperatur</p>
-                           <p id="3pre">Niederschlag</p>
+                           <p id="3temp">Temperatur:</p>
+                           <p id="3pre">Niederschlag:</p>
+                           <img class="small-image" id="img3" src="./pictures/frog.png" alt="The weather">
                         </div>
                     </li>
                     <li>
                         <div>
                            <p id="4date">Datum: </p> 
-                           <p id="4temp">Temperatur</p>
-                           <p id="4pre">Niederschlag</p>
+                           <p id="4temp">Temperatur:</p>
+                           <p id="4pre">Niederschlag:</p>
+                           <img class="small-image" id="img4" src="./pictures/frog.png" alt="The weather">
                         </div>
                     </li>
                     <li>
                         <div>
                            <p id="5date">Datum: </p> 
-                           <p id="5temp">Temperatur</p>
-                           <p id="5pre">Niederschlag</p>
+                           <p id="5temp">Temperatur:</p>
+                           <p id="5pre">Niederschlag:</p>
+                           <img class="small-image" id="img5" src="./pictures/frog.png" alt="The weather">
                         </div>
                     </li>
                     <li>
                         <div>
                            <p id="6date">Datum: </p> 
-                           <p id="6temp">Temperatur</p>
-                           <p id="6pre">Niederschlag</p>
+                           <p id="6temp">Temperatur:</p>
+                           <p id="6pre">Niederschlag:</p>
+                           <img class="small-image" id="img6" src="./pictures/frog.png" alt="The weather">
                         </div>
                     </li>
                     <li>
                         <div>
                            <p id="7date">Datum: </p> 
-                           <p id="7temp">Temperatur</p>
-                           <p id="7pre">Niederschlag</p>
+                           <p id="7temp">Temperatur:</p>
+                           <p id="7pre">Niederschlag:</p>
+                           <img class="small-image" id="img7" src="./pictures/frog.png" alt="The weather">
                         </div>
                     </li>
                 </ul>
@@ -117,7 +125,11 @@
         </div>
     </main>
 </body>
+<hr>
 <footer id="contact">
-    <p>Erstellt durch Jonas</p>
+    <h3></h3>
+    <p>Erstellt für den <a href="https://minihackathon.de/youtube/" target="_blank">Mini-Hackathon</a> Kevin Chromik!</p>
+    <p>Alle Bilder wurden durch <a href="https://playground.com" target="_blank">Playground</a> erstellt.</p>
+    <p>Falls ihr Feedback habt, schreibt mich gerne bei Discord an @derfussel1299 :)</p>
 </footer>
 </html>
