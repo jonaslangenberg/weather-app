@@ -65,6 +65,30 @@ async function getCoordinates(city, country) {
     }
 }
 
+function changeWebsite(data) {
+    const dataToday = data.current;
+    //Variablen für den heutigen Tagg
+    const tempToday = dataToday.temperature_2m;
+    const precipitationToday = dataToday.precipitation;
+    const windToday = dataToday.wind_speed_10m;
+    const humidityToday = dataToday.relative_humidity_2m;
+    //Variablen für heute in Text Elemente einfügen
+    document.getElementById("temp").textContent = String(tempToday) + " °C";
+    document.getElementById("niederschlag").textContent = String(precipitationToday) + " mm";
+    document.getElementById("wind").textContent = String(windToday) + " km/h";
+    document.getElementById("luft").textContent = String(humidityToday) + "%";
+    //Variablen für die nächsten Tage
+    const dailyData = data.daily;
+    const dataTempWeek = dailyData.temperature_2m_max;
+    const dataPrecepWeek = dailyData.precipitation_sum;
+    const dates = dailyData.time;
+    for (i = 0; i < 7; i++) {
+        document.getElementById(String(i + 1)+"date").textContent = String(dates[i]);
+        document.getElementById(String(i + 1)+"temp").textContent = String(dataTempWeek[i]) + " °C";
+        document.getElementById(String(i + 1)+"pre").textContent = String(dataPrecepWeek[i]) + " mm";
+    }
+
+}
 
 async function getWeatherData() {
     console.log("Passiert überhaupt was?");
@@ -83,7 +107,7 @@ async function getWeatherData() {
     let lon = String(coordinatesLiteral.longitude);
     let lat = String(coordinatesLiteral.latitude);
     // //URL mit einigen Parametern erstellen
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,wind_speed_10m,relative_humidity_2m,cloud_cover,precipitation&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=auto`;
     
     //API Anfrage stellen
     const response = await fetch(url);
@@ -93,5 +117,5 @@ async function getWeatherData() {
     const data = await response.json();
     //JSON als Datei speichern
     console.log(data);
-    //changeWebsite(data);
+    changeWebsite(data);
 }
