@@ -127,7 +127,7 @@ main {
     width: 100%;
     margin: 40px 0;
 }
-#search-button {
+button {
     display: block;
     margin: 10px auto;
     width: 20%;
@@ -139,10 +139,11 @@ main {
     border-radius: 5px;
     font-weight: 800;
 }
-#search-buton:hover{
+button:hover{
     background-color: black;
     color: aquamarine;
     border: 2px solid white;
+    cursor: pointer;
 }
 
 #wetterbild {
