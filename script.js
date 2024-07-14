@@ -61,14 +61,14 @@ function changeWebsite(data) {
     document.getElementById("luft").textContent = String(humidityToday) + "%";
     if (precipitationToday === 0) {
         if (tempToday > 18){
-            document.getElementById("wetterbild").src = "./pictures/sunny.png";
+            document.getElementById("wetterbild").src = "./pictures/sunny.jpeg";
         }
         else {
-            document.getElementById("wetterbild").src = "./pictures/cloudy.png";
+            document.getElementById("wetterbild").src = "./pictures/cloudy.jpeg";
         }
         
     } else {
-        document.getElementById("wetterbild").src = "./pictures/rainy.png";
+        document.getElementById("wetterbild").src = "./pictures/rainy.jpeg";
     }
     //Variablen für die nächsten Tage
     const dailyData = data.daily;
@@ -76,9 +76,20 @@ function changeWebsite(data) {
     const dataPrecepWeek = dailyData.precipitation_sum;
     const dates = dailyData.time;
     for (i = 0; i < 7; i++) {
-        document.getElementById(String(i + 1)+"date").textContent = String(dates[i]);
-        document.getElementById(String(i + 1)+"temp").textContent = String(dataTempWeek[i]) + " °C";
-        document.getElementById(String(i + 1)+"pre").textContent = String(dataPrecepWeek[i]) + " mm";
+        document.getElementById(String(i + 1)+"date").textContent = "Datum: " + String(dates[i]);
+        document.getElementById(String(i + 1)+"temp").textContent = "Temperatur: " + String(dataTempWeek[i]) + " °C";
+        document.getElementById(String(i + 1)+"pre").textContent = "Niederschlag: " + String(dataPrecepWeek[i]) + " mm";
+        if (dataPrecepWeek[i] === 0) {
+            if (tempToday > 18){
+                document.getElementById("img"+String(i+1)).src = "./pictures/sunny.jpeg";
+            }
+            else {
+                document.getElementById("img"+String(i+1)).src = "./pictures/cloudy.jpeg";
+            }
+            
+        } else {
+            document.getElementById("img"+String(i+1)).src = "./pictures/rainy.jpeg";
+        }
     }
 
 }
