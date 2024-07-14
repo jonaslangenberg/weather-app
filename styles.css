@@ -101,6 +101,7 @@ main {
     margin: 10px 0;
     padding: 7px;
     width: 40%;
+    flex-wrap: wrap;
     
 }
 .searchbox > label {
@@ -110,6 +111,7 @@ main {
     min-width: 200px;
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .searchbox > label > input{
     align-items: center;
