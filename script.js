@@ -1,25 +1,7 @@
 // Stadtnamen und Landnamen in zugehörige Koordinaten umwandeln
 // Diese können im Anschluss für die weather api verwendet werden
 
-// async function getCoordinates(city, country) {
-//     const url = "https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(city)},${encodeURIComponent(country)}&format=json&limit=1";
-//     const response = await fetch(url);
-//     const data = await response.json();
-//     if (data.length > 0) {
-//         const location = data[0];
-//         var element = document.getElementById("success");
-//         element.textContent = "Erfolg! Deine Ergebnisse stehen in kürze bereit.";
-//         console.log("WOOOW")
-//         console.log(location);
-//         //return {latitude: parseFloat(location.lat), longitude: parseFloat(location.lon)};
-//     } else{
-//         var element = document.getElementById("success");
-//         console.log("HILFE")
-//         element.textContent = "Kein Erfolg, bitte überprüfe deine Einträge.";
-//         return [0, 0];  
-//     }
-      
-// }
+
 async function getCoordinates(city, country) {
     console.log(city);
     console.log(country);
@@ -77,6 +59,17 @@ function changeWebsite(data) {
     document.getElementById("niederschlag").textContent = String(precipitationToday) + " mm";
     document.getElementById("wind").textContent = String(windToday) + " km/h";
     document.getElementById("luft").textContent = String(humidityToday) + "%";
+    if (precipitationToday === 0) {
+        if (tempToday > 18){
+            document.getElementById("wetterbild").src = "./pictures/sunny.png";
+        }
+        else {
+            document.getElementById("wetterbild").src = "./pictures/cloudy.png";
+        }
+        
+    } else {
+        document.getElementById("wetterbild").src = "./pictures/rainy.png";
+    }
     //Variablen für die nächsten Tage
     const dailyData = data.daily;
     const dataTempWeek = dailyData.temperature_2m_max;
